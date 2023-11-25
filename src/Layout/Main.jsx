@@ -6,9 +6,13 @@ import NavBar from "../pages/NavBar";
 const Main = () => {
     return (
         <div>
-            <NavBar />
-            <Outlet />
-            <Footer />
+            <div className="max-w-7xl mx-auto">
+                <NavBar />
+                <Outlet />
+            </div>
+            <div>
+                <Footer />
+            </div>
         </div>
     );
 };
