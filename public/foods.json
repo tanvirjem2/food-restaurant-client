@@ -1,0 +1,56 @@
+[
+    {
+        "food_name": "Burger",
+        "food_image": "https://i.ibb.co/wBF8qP2/Burger-2.jpg",
+        "food_category": "Fast Food",
+        "price": 5.99,
+        "made_by": "Chef's Kitchen",
+        "food_origin": "United States",
+        "description": "A delicious burger with a juicy patty, fresh lettuce, tomatoes, and special sauce, served in a soft sesame seed bun."
+    },
+    {
+        "food_name": "French Fry",
+        "food_image": "https://i.ibb.co/4Np6fV8/french-fries-10318928.webp",
+        "food_category": "Snack",
+        "price": 2.49,
+        "made_by": "Crispy Delights",
+        "food_origin": "Belgium",
+        "description": "Golden and crispy fries, perfectly seasoned and served with your choice of dipping sauce."
+    },
+    {
+        "food_name": "Pasta",
+        "food_image": "https://i.ibb.co/q5fXpHC/Red-Sauce-Pasta-008.webp",
+        "food_category": "Italian",
+        "price": 8.99,
+        "made_by": "Mamma Mia's Kitchen",
+        "food_origin": "Italy",
+        "description": "Al dente pasta with rich and flavorful tomato sauce, topped with grated Parmesan cheese and fresh basil."
+    },
+    {
+        "food_name": "Sandwich",
+        "food_image": "https://i.ibb.co/1RQxkcP/Sandwich-PNG-Clipart-Vector-Picture.png",
+        "food_category": "Lunch",
+        "price": 6.49,
+        "made_by": "Gourmet Bites",
+        "food_origin": "Various",
+        "description": "A classic sandwich with layers of premium meats, fresh veggies, and a choice of spreads, all nestled between slices of artisan bread."
+    },
+    {
+        "food_name": "Cold Drinks",
+        "food_image": "https://i.ibb.co/Kh52Lxf/download.png",
+        "food_category": "Beverage",
+        "price": 1.99,
+        "made_by": "Refresh Co.",
+        "food_origin": "Various",
+        "description": "A selection of refreshing cold drinks, including sodas, iced tea, and fruit-flavored beverages to quench your thirst."
+    },
+    {
+        "food_name": "Combo",
+        "food_image": "https://i.ibb.co/s94ZVm5/pngtree-delicious-burger-set-png-image-3198094.jpg",
+        "food_category": "Meal Deal",
+        "price": 12.99,
+        "made_by": "Chef's Choice",
+        "food_origin": "International",
+        "description": "The ultimate combo featuring a burger, fries, a small pasta dish, and a choice of cold drink – a perfect meal for any craving."
+    }
+]

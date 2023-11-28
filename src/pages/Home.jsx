@@ -76,6 +76,10 @@ const Home = () => {
                     </p>
                 </div>
             </div>
+
+            {/* Part 4 */}
+
+            {/* <Foods /> */}
         </div>
     );
 };
