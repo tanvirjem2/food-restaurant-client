@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
 import Footer from "../pages/Footer";
 import NavBar from "../pages/NavBar";
-import Banner from "../Home/Banner";
-import Foods from "../Home/Foods";
+// import Banner from "../Home/Banner";
+// import Foods from "../Home/Foods";
 
 
 const Main = () => {
@@ -10,9 +10,9 @@ const Main = () => {
         <div>
             <div className="max-w-7xl mx-auto">
                 <NavBar />
-                <Banner />
+                {/* <Banner /> */}
                 <Outlet />
-                <Foods />
+                {/* <Foods /> */}
             </div>
             <div>
                 <Footer />

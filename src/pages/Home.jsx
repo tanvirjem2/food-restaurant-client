@@ -6,10 +6,16 @@ import combo from '../assets/pngtree-delicious-burger-set-png-image_3198094.jpg'
 import rightMark from '../assets/right_mark.png'
 import delivery from '../assets/food_delivery.jpg'
 import fry from '../assets/french-fries-10318928.webp'
+import Foods from '../Home/Foods'
+import Banner from "../Home/Banner";
 
 const Home = () => {
     return (
         <div className='mt-20'>
+
+            {/* Part - 0 */}
+
+            <Banner />
 
             {/* Part - 1 */}
 
@@ -79,7 +85,7 @@ const Home = () => {
 
             {/* Part 4 */}
 
-            {/* <Foods /> */}
+            <Foods />
         </div>
     );
 };
