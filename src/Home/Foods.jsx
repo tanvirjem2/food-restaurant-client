@@ -7,7 +7,7 @@ const Foods = () => {
     const [foods, setFoods] = useState([])
 
     useEffect(() => {
-        fetch('/foods.json')
+        fetch('http://localhost:5000/foods')
             .then(res => res.json())
             .then(data => {
                 console.log(data)
