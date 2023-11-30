@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 
 
 const Food = ({ food }) => {
 
-    const { food_name, food_image, food_category, price } = food
+    const { _id, food_name, food_image, food_category, price } = food
 
     return (
         <div className="p-5 rounded-xl space-y-6 shadow-xl">
@@ -13,7 +14,9 @@ const Food = ({ food }) => {
                 <p className="text-[red] font-extrabold">$ {price}</p>
             </div>
             <div className="flex items-center gap-6 justify-center">
-                <button className="rounded-3xl btn">Details</button>
+                <Link to={`/details/${_id}`}>
+                    <button className="rounded-3xl btn">Details</button>
+                </Link>
             </div>
         </div>
     );

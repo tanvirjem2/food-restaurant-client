@@ -86,6 +86,11 @@ const Home = () => {
             {/* Part 4 */}
 
             <Foods />
+
+            <div className="text-center">
+                <button className="rounded-3xl bg-[red] text-[white] btn">View All Products</button>
+            </div>
+
         </div>
     );
 };

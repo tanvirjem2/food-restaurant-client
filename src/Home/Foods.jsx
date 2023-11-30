@@ -26,9 +26,6 @@ const Foods = () => {
                     foods.map(food => <Food key={food.id} food={food}></Food>)
                 }
             </div>
-            <div className="text-center">
-                <button className="rounded-3xl bg-[red] text-[white] btn">View All Products</button>
-            </div>
         </div>
     );
 };

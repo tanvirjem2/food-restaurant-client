@@ -5,6 +5,7 @@ import Blog from "../Blog/Blog";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import LogIn from "../pages/LogIn";
 import SignUp from "../pages/SignUp";
+import AllFoods from "../Home/AllFoods";
 
 const router = createBrowserRouter([
     {
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
             { path: "/blog", element: <Blog /> },
             { path: "/login", element: <LogIn /> },
             { path: "/signUp", element: <SignUp /> },
+            { path: "/allFoods", element: <AllFoods /> },
         ]
     },
 ]);
