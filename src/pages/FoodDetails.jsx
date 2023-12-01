@@ -1,11 +1,11 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 
 const FoodDetails = () => {
 
     const food = useLoaderData();
 
-    const { food_image, food_name, food_category, price, made_by, food_origin, description } = food;
+    const { _id,food_image, food_name, food_category, price, made_by, food_origin, description } = food;
 
     console.log(food)
 
@@ -22,7 +22,9 @@ const FoodDetails = () => {
                     <p><span className="font-extrabold">Made By:</span> {made_by}</p>
                     <p><span className="font-extrabold">Origin:</span> {food_origin}</p>
                     <p><span className="font-extrabold">Description:</span> {description}</p>
-                    <button className="rounded-3xl btn bg-[red] text-white">Order Now</button>
+                    <Link to={`/purchase/${_id}`}>
+                        <button className="rounded-3xl btn bg-[red] text-white">Order Now</button>
+                    </Link>
                 </div>
             </div>
         </div>
