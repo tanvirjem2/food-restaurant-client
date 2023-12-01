@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const FoodPurchase = () => {
@@ -15,7 +16,44 @@ const FoodPurchase = () => {
         e.preventDefault();
         const form = e.target;
 
+        const foodName = form.foodName.value;
+        const price = form.price.value;
+        const quantity = form.quantity.value;
+        const name = form.name.value;
+        const email = form.email.value;
+        const photo = form.photo.value;
+        const date = form.date.value
+        const order = {
+            foodName,
+            price,
+            quantity,
+            buyerName: name,
+            email,
+            photo,
+            date
+        }
+        console.log(order)
 
+        fetch('http://localhost:5000/purchasing', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(order)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.insertedId) {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Your work has been saved",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
     }
 
     return (
@@ -28,7 +66,7 @@ const FoodPurchase = () => {
 
                         {/* Food Name */}
 
-                        <input defaultValue={food_name} placeholder="Food Name" className="border-2 p-3 rounded-lg" type="text" name="name" id="" />
+                        <input defaultValue={food_name} placeholder="Food Name" className="border-2 p-3 rounded-lg" type="text" name="foodName" id="" />
 
                         {/* Food Price */}
 
@@ -45,6 +83,10 @@ const FoodPurchase = () => {
                         {/* Buyer Email */}
 
                         <input defaultValue={user?.email} placeholder="Buyer Email" className="border-2 p-3 rounded-lg" type="email" name="email" id="" />
+
+                        {/* Photo */}
+
+                        <input defaultValue={food_image} placeholder="Food Photo" className="border-2 p-3 rounded-lg" type="text" name="photo" id="" />
 
                         <input className="border-2 p-3 rounded-lg" type="date" name="date" id="" />
 
