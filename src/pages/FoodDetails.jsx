@@ -13,7 +13,7 @@ const FoodDetails = () => {
         <div className="border-2 p-10 rounded-xl">
             <div className="flex items-center">
                 <div>
-                    <img className="w-1/2" src={food_image} alt="" />
+                    <img className="border-2 rounded-xl w-1/2" src={food_image} alt="" />
                 </div>
                 <div className="space-y-4">
                     <h1><span className="font-extrabold">Name:</span> {food_name}</h1>

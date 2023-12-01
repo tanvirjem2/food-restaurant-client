@@ -1,7 +1,58 @@
 import { Link } from "react-router-dom";
 import logo from '../assets/Tasty_food_logo.png'
+import { useContext, useState } from "react";
+import { AuthContext } from "../providers/AuthProvider"
+import { GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
+import app from "../firebase.config";
+import { FcGoogle } from 'react-icons/fc';
 
 const NavBar = () => {
+
+    // useState ()
+    const [googleUser, setGoogleUser] = useState(null)
+
+    const { user, logOut } = useContext(AuthContext)
+
+    // Auth
+    const auth = getAuth(app);
+
+    // Provider
+    const provider = new GoogleAuthProvider()
+
+    // handle Google sign in
+    const handleGoogleSignIn = () => {
+        signInWithPopup(auth, provider)
+            .then(result => {
+                const loggedInUser = result.user;
+                setGoogleUser(loggedInUser);
+            })
+            .catch(error => {
+                console.log('error', error.message)
+            })
+        console.log('clicked');
+    }
+
+    // handle sign out
+    const handleGoogleSignOut = () => {
+        signOut(auth)
+            .then((result) => {
+                setGoogleUser(null)
+                console.log(result);
+            })
+            .catch((error) => {
+                console.log('error', error.message)
+            })
+    }
+
+    const handleSignOut = () => {
+        logOut()
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
 
     const navItems = <>
         <li><Link to='/'>Home</Link></li>
@@ -38,8 +89,34 @@ const NavBar = () => {
 
                 </ul>
             </div>
-            <div className="navbar-end">
-                <button className="btn">Button</button>
+            <div className="navbar-end gap-3">
+
+                {googleUser &&
+                    <div className="">
+                        <img className="rounded-full w-[40px] h-[40px] mx-auto" src={googleUser.photoURL} alt="" />
+                        <div>
+                            <h2 className="text-center"><span className="font-semibold">Name:</span> {googleUser.displayName}</h2>
+                        </div>
+                    </div>
+                }
+
+                {googleUser ?
+                    <button onClick={handleGoogleSignOut}
+                        className="btn">Sign Out
+                    </button>
+                    :
+                    <button onClick={handleGoogleSignIn}
+                        className="btn"><FcGoogle />login with google
+                    </button>
+                }
+
+                {user ?
+                    <button onClick={handleSignOut} className="btn">Logout</button>
+                    :
+                    <Link to={'/login'}>
+                        <button className="btn text-white bg-[#403F3F]">Login</button>
+                    </Link>
+                }
             </div>
         </div>
     );
