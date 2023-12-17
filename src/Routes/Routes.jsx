@@ -9,7 +9,7 @@ import AllFoods from "../Home/AllFoods";
 import FoodDetails from "../pages/FoodDetails";
 import FoodPurchase from "../pages/FoodPurchase";
 import Purchasing from "../pages/Purchasing";
-import PrivateRoute from "./PrivateRoute";
+// import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -26,12 +26,12 @@ const router = createBrowserRouter([
             {
                 path: "/details/:id",
                 element: <FoodDetails />,
-                loader: ({ params }) => fetch(`http://localhost:5000/foods/${params.id}`)
+                loader: ({ params }) => fetch(`https://food-restaurant-server.vercel.app/foods/${params.id}`)
             },
             {
                 path: "/purchase/:id",
                 element: <FoodPurchase></FoodPurchase>,
-                loader: ({ params }) => fetch(`http://localhost:5000/foods/${params.id}`)
+                loader: ({ params }) => fetch(`https://food-restaurant-server.vercel.app/foods/${params.id}`)
             },
             {
                 path: "purchasing",

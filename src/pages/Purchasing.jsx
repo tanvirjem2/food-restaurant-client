@@ -7,7 +7,7 @@ const Purchasing = () => {
 
     const { user } = useContext(AuthContext);
 
-    const [purchasing, setPurchasing] = useState([]);
+    const [purchasings, setPurchasings] = useState([]);
 
     const url = `http://localhost:5000/purchasing?email=${user?.email}`
 
@@ -16,16 +16,16 @@ const Purchasing = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                setPurchasing(data)
+                setPurchasings(data)
             })
     }, [url])
 
     return (
         <div>
-            <h1 className="mb-10 text-center text-3xl border-2 p-5 rounded-xl">Your Purchasing: {purchasing.length}</h1>
+            <h1 className="mb-10 text-center text-3xl border-2 p-5 rounded-xl">Your Purchasing: {purchasings.length}</h1>
             <div className="space-y-6 my-10">
                 {
-                    purchasing.map(booking => <Purchase key={booking._id} booking={booking}></Purchase>)
+                    purchasings.map(purchasing => <Purchase key={purchasing._id} purchasing={purchasing}></Purchase>)
                 }
             </div>
         </div>

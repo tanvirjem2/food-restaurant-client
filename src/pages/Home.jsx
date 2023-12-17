@@ -8,6 +8,7 @@ import delivery from '../assets/food_delivery.jpg'
 import fry from '../assets/french-fries-10318928.webp'
 import Foods from '../Home/Foods'
 import Banner from "../Home/Banner";
+import Contact from '../Home/Contact'
 
 const Home = () => {
     return (
@@ -90,6 +91,10 @@ const Home = () => {
             <div className="text-center">
                 <button className="rounded-3xl bg-[red] text-[white] btn">View All Products</button>
             </div>
+
+            {/* Part 5 */}
+
+            <Contact />
 
         </div>
     );
