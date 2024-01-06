@@ -10,7 +10,7 @@ const Purchasing = () => {
 
     const [purchasings, setPurchasings] = useState([]);
 
-    const url = `http://localhost:5000/purchasing?email=${user?.email}`
+    const url = `https://food-restaurant-server.vercel.app/purchasing?email=${user?.email}`
 
     useEffect(() => {
         fetch(url)
@@ -26,7 +26,7 @@ const Purchasing = () => {
     const handleDelete = id => {
         const proceed = confirm("Are You Sure?")
         if (proceed) {
-            fetch(`http://localhost:5000/purchasing/${id}`, {
+            fetch(`https://food-restaurant-server.vercel.app/purchasing/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -51,7 +51,7 @@ const Purchasing = () => {
     // ----------- Update part ------------------
 
     const handlePurchasingConfirm = id => {
-        fetch(`http://localhost:5000/purchasing/${id}`, {
+        fetch(`https://food-restaurant-server.vercel.app/purchasing/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
